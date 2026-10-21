@@ -98,6 +98,7 @@ h1 {
     color: white;
     font-family: sans-serif;
     font-weight: bolder;
+    border-radius: 100vh;
 }
 
 .Filmene {
@@ -105,4 +106,8 @@ h1 {
     width: 90%;
     height: 60vh;
     justify-self: center;
+}
+
+.movies {
+    display: flex;
 }

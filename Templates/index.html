@@ -3,14 +3,60 @@
 {% block content %}
 <section class="Overting">
     <h1>Velkommen til hauto keino kino</h1>
-    <img src="{{ url_for('static', filename='bilder/Bakgrunn.jpg') }}" alt="Flask-logo">
+    <img src="{{ url_for('static', filename='bilder/Bakgrunn.png') }}" alt="Flask-logo">
     <p class="tekst1">klar for å goone på kino, se våres filmer her:</p>
     <a href="#" class="knapp">se filmer</a>
 
 </section>
 
 <section class="Filmene">
-    
+    <p>populære filmer</p>
+    <div id="movies"></div>
+<script>
+async function loadMovies() {
+    const container = document.getElementById("movies");
+    container.textContent = "Loading movies...";
+
+    try {
+        const response = await fetch("/api/movies/popular");
+
+        if (!response.ok) {
+            throw new Error("Failed to load movies");
+        }
+
+        const movies = await response.json();
+        container.replaceChildren();
+
+        movies.forEach(movie => {
+            const card = document.createElement("article");
+            const title = document.createElement("h3");
+            const description = document.createElement("p");
+            const poster = document.createElement("img");
+
+            title.textContent = movie.title;
+            description.textContent = movie.overview || "No description available.";
+
+            if (movie.poster_path) {
+                poster.src =
+                    "https://image.tmdb.org/t/p/w500" +
+                    movie.poster_path;
+                poster.alt = movie.title + " poster";
+                poster.loading = "lazy";
+                card.appendChild(poster);
+            }
+
+            card.append(title, description);
+            container.appendChild(card);
+        });
+    } catch (error) {
+        container.textContent = "Could not load movies.";
+        console.error(error);
+    }
+}
+
+loadMovies();
+</script>
+
 </section>
 
 {% endblock %}
