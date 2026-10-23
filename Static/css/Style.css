@@ -64,7 +64,7 @@ body {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-family: sans-serif;
     font-weight: bolder;
     text-align: center;
@@ -270,4 +270,9 @@ h1 {
 
 .billettinfo p {
     margin: 0.6rem 0;
+}
+
+.omoss {
+    color: white;
+    text-align: center;
 }
