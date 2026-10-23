@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}bestilling{% endblock %}
+{% block content %}
+<form method="POST" class="bestillingform">
+    <h1>Bestill kinobilletter</h1>
+
+    <div class="feltboks">
+        <label for="navn-felt">Navn</label>
+        <input type="text" id="navn-felt" name="navn" autocomplete="name" required>
+    </div>
+
+    <div class="feltboks">
+        <label for="film-velger">Film</label>
+        <select id="film-velger" name="film" required>
+            <option value="" disabled selected>Velg en film</option>
+            <option value="Løvenes konge">Løvenes konge</option>
+            <option value="Spider-Man: Into the Spider-Verse">Spider-Man: Into the Spider-Verse</option>
+            <option value="Innsiden ut">Innsiden ut</option>
+            <option value="Harry Potter og De vises stein">Harry Potter og De vises stein</option>
+        </select>
+    </div>
+
+    <div class="feltrad">
+        <div class="feltboks">
+            <label for="alder-valg">Aldersgruppe</label>
+            <select id="alder-valg" name="aldersgruppe" required>
+                <option value="" disabled selected>Velg aldersgruppe</option>
+                <option value="Barn (0-12 år)">Barn (0-12 år)</option>
+                <option value="Ungdom (13-17 år)">Ungdom (13-17 år)</option>
+                <option value="Voksen (18-66 år)">Voksen (18-66 år)</option>
+                <option value="Honnør (67+ år)">Honnør (67+ år)</option>
+            </select>
+        </div>
+        <div class="feltboks">
+            <label for="billett-antall">Antall billetter</label>
+            <input type="number" id="billett-antall" name="antall" min="1" max="10" value="1" required>
+        </div>
+    </div>
+
+    <div class="feltrad">
+        <div class="feltboks">
+            <label for="kino-dato">Dato</label>
+            <select id="kino-dato" name="dato" required>
+                <option value="" disabled selected>Velg dato</option>
+                <option value="28. desember 2026">28. desember 2026</option>
+                <option value="29. desember 2026">29. desember 2026</option>
+                <option value="30. desember 2026">30. desember 2026</option>
+                <option value="31. desember 2026">31. desember 2026</option>
+            </select>
+        </div>
+        <div class="feltboks">
+            <label for="film-tid">Visningstid</label>
+            <select id="film-tid" name="visningstid" required>
+                <option value="" disabled selected>Velg tidspunkt</option>
+                <option value="13:00">13:00</option>
+                <option value="16:00">16:00</option>
+                <option value="19:00">19:00</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="lillaknapp sendbestilling">Gå videre</button>
+</form>
+{% endblock %}

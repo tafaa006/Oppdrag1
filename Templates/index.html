@@ -1,63 +1,50 @@
 {% extends "base.html" %}
 {% block title %}forside{% endblock %}
 {% block content %}
-<section class="Overting">
+<section class="forsideboks">
     <h1>Velkommen til hauto keino kino</h1>
-    <p class="tekst1">klar for å goone på kino, se våres filmer her:</p>
-    <a href="#" class="knapp">se filmer</a>
+    <p class="introprat">klar for å goone på kino, se våres filmer her:</p>
+    <a href="#" id="film-start" class="lillaknapp">se filmer</a>
 
-    <p class="tekst1">Se filmer med hele familien!</p>
+    <p class="introprat">Se filmer med hele familien!</p>
     <img src="{{url_for('static', filename='bilder/kinofamilie.jpg')}}" alt="">
 </section>
 
-<section class="Filmene">
-    <p class="tekst2">populære filmer</p>
-    <div id="movies"></div>
-<script>
-async function loadMovies() {
-    const container = document.getElementById("movies");
-    container.textContent = "Loading movies...";
-
-    try {
-        const response = await fetch("/api/movies/popular");
-
-        if (!response.ok) {
-            throw new Error("Failed to load movies");
-        }
-
-        const movies = await response.json();
-        container.replaceChildren();
-
-        movies.forEach(movie => {
-            const card = document.createElement("article");
-            const title = document.createElement("h3");
-            const description = document.createElement("p");
-            const poster = document.createElement("img");
-
-            title.textContent = movie.title;
-            description.textContent = movie.overview || "No description available.";
-
-            if (movie.poster_path) {
-                poster.src =
-                    "https://image.tmdb.org/t/p/w500" +
-                    movie.poster_path;
-                poster.alt = movie.title + " poster";
-                poster.loading = "lazy";
-                card.appendChild(poster);
-            }
-
-            card.append(title, description);
-            container.appendChild(card);
-        });
-    } catch (error) {
-        container.textContent = "Could not load movies.";
-        console.error(error);
-    }
-}
-
-loadMovies();
-</script>
-
+<section class="filmvisning">
+    <div class="filmtoppen">
+        <p class="filmoverskrift">populære filmer</p>
+        <a id="mer-film" class="lillaknapp" href="{{ url_for('filmer') }}">Se mer</a>
+    </div>
+    <div class="filmrad">
+        <div class="filmboks">
+            <img class="filmplakat" src="{{url_for('static', filename='bilder/LionKing.jpg')}}" alt="Plakat for Løvenes konge">
+            <h2>Løvenes konge</h2>
+            <p class="filmtype">Animasjon · Eventyr</p>
+            <p>Løveungen Simba må finne sin plass som konge av savannen.</p>
+            <a class="lillaknapp billettkjop" href="{{ url_for('bestilling') }}">kjøp billett</a>
+        </div>
+        <div class="filmboks">
+            <img class="filmplakat" src="{{url_for('static', filename='bilder/Spiderman.jpg')}}" alt="Plakat for Spider-Man: Into the Spider-Verse">
+            <h2>Spider-Man: Into the Spider-Verse</h2>
+            <p class="filmtype">Animasjon · Action</p>
+            <p>Miles Morales oppdager kreftene sine og møter Spider-Man fra flere universer.</p>
+            <a class="lillaknapp billettkjop" href="{{ url_for('bestilling') }}">kjøp billett</a>
+        </div>
+        <div class="filmboks">
+            <img class="filmplakat" src="{{url_for('static', filename='bilder/Insideout.jpg')}}" alt="Plakat for Innsiden ut">
+            <h2>Innsiden ut</h2>
+            <p class="filmtype">Animasjon · Familie</p>
+            <p>Glede, Sorg og de andre følelsene prøver å hjelpe Riley gjennom en stor forandring.</p>
+            <a class="lillaknapp billettkjop" href="{{ url_for('bestilling') }}">kjøp billett</a>
+        </div>
+        <div class="filmboks">
+            <img class="filmplakat" src="{{url_for('static', filename='bilder/HarryPotter.jpg')}}" alt="Plakat for Harry Potter og De vises stein">
+            <h2>Harry Potter og De vises stein</h2>
+            <p class="filmtype">Fantasy · Familie</p>
+            <p>Harry begynner på Galtvort, der han oppdager en verden full av magi og mysterier.</p>
+            <a class="lillaknapp billettkjop" href="{{ url_for('bestilling') }}">kjøp billett</a>
+        </div>
+    </div>
 </section>
 
 {% endblock %}

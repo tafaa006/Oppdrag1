@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="no">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% block title %}Min Flask-app{% endblock %}</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/Style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Min Flask-app{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Style.css') }}">
 </head>
+
 <body>
-<nav>
-<div class="nav">
-<a href="{{ url_for('index') }}" class="Lenke">Hjem </a>
-<a href="{{ url_for('index') }}" class="Lenke">Filmer </a>
-<a href="{{ url_for('index') }}" class="Lenke">Bestilling</a>
-<a href="{{ url_for('index') }}" class="Lenke">Om oss</a>
-</div>
-</nav>
+    <nav>
+        <div class="menystripa">
+            <a href="{{ url_for('index') }}" class="menyvalg">Hjem </a>
+            <a href="{{ url_for('filmer') }}" class="menyvalg">Filmer </a>
+            <a href="{{ url_for('bestilling') }}" class="menyvalg">Bestilling</a>
+            <a href="{{ url_for('om_oss') }}" class="menyvalg">Om oss</a>
+        </div>
+    </nav>
 
-<main>
-{% block content %}
-{% endblock %}
-</main>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
-<footer class="footer">
-    <p>&copy; 2026 hauto keino kino AS. All rights reserved.</p>
-</footer>
+    <footer class="footer">
+        <p>&copy; 2026 hauto keino kino AS. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>

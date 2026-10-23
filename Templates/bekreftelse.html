@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}bekreftelse{% endblock %}
+{% block content %}
+<section class="bestillingboks">
+    <div class="bestillingform takkboks">
+        <h1>Takk for bestillingen, {{ navn }}!</h1>
+        <p class="bestillingprat">Her er detaljene for kinobillettene dine:</p>
+        <div class="billettinfo">
+            <p><strong>Film:</strong> {{ film }}</p>
+            <p><strong>Aldersgruppe:</strong> {{ aldersgruppe }}</p>
+            <p><strong>Dato:</strong> {{ dato }}</p>
+            <p><strong>Visning:</strong> {{ visningstid }}</p>
+            <p><strong>Antall billetter:</strong> {{ antall }}</p>
+        </div>
+        <a class="lillaknapp sendbestilling" href="{{ url_for('index') }}">Til forsiden</a>
+    </div>
+</section>
+{% endblock %}

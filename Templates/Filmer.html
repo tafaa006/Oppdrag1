@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}forside{% endblock %}
+{% block content %}
+
+<section class="filmvisning">
+    <div class="filmtoppen">
+        <p class="filmoverskrift">Filmer</p>
+    </div>
+    <div class="filmrad">
+        <div class="filmboks">
+            <img class="filmplakat" src="{{url_for('static', filename='bilder/LionKing.jpg')}}" alt="Plakat for Løvenes konge">
+            <h2>Løvenes konge</h2>
+            <p class="filmtype">Animasjon · Eventyr</p>
+            <p>Løveungen Simba må finne sin plass som konge av savannen.</p>
+            <a class="lillaknapp billettkjop" href="{{ url_for('bestilling') }}">kjøp billett</a>
+        </div>
+        <div class="filmboks">
+            <img class="filmplakat" src="{{url_for('static', filename='bilder/Spiderman.jpg')}}" alt="Plakat for Spider-Man: Into the Spider-Verse">
+            <h2>Spider-Man: Into the Spider-Verse</h2>
+            <p class="filmtype">Animasjon · Action</p>
+            <p>Miles Morales oppdager kreftene sine og møter Spider-Man fra flere universer.</p>
+            <a class="lillaknapp billettkjop" href="{{ url_for('bestilling') }}">kjøp billett</a>
+        </div>
+        <div class="filmboks">
+            <img class="filmplakat" src="{{url_for('static', filename='bilder/Insideout.jpg')}}" alt="Plakat for Innsiden ut">
+            <h2>Innsiden ut</h2>
+            <p class="filmtype">Animasjon · Familie</p>
+            <p>Glede, Sorg og de andre følelsene prøver å hjelpe Riley gjennom en stor forandring.</p>
+            <a class="lillaknapp billettkjop" href="{{ url_for('bestilling') }}">kjøp billett</a>
+        </div>
+        <div class="filmboks">
+            <img class="filmplakat" src="{{url_for('static', filename='bilder/HarryPotter.jpg')}}" alt="Plakat for Harry Potter og De vises stein">
+            <h2>Harry Potter og De vises stein</h2>
+            <p class="filmtype">Fantasy · Familie</p>
+            <p>Harry begynner på Galtvort, der han oppdager en verden full av magi og mysterier.</p>
+            <a class="lillaknapp billettkjop" href="{{ url_for('bestilling') }}">kjøp billett</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+ 
