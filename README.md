@@ -71,3 +71,5 @@ Oppdrag1/
 - `/om_oss` – Informasjon om kinoen
 
 Flask kjører med feilsøkingsmodus aktivert når appen startes med `python app.py`. Dette er ment for lokal utvikling, ikke for publisering på en offentlig server.
+
+# read me fil laget av KI
