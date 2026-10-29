@@ -58,7 +58,10 @@ def bestilling():
             total_pris=total_pris,
         )
 
-    return render_template("bestilling.html", setene=setene)
+    return render_template(
+        "bestilling.html",
+          setene=setene
+          )
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,4 +1,4 @@
-# Hauto Keino Kino
+# Karasjok Kino
 
 Et enkelt kinonettsted laget med Python og Flask. Her kan du se en oversikt over filmer, lese litt om kinoen og fylle ut et bestillingsskjema.
 
