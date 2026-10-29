@@ -42,6 +42,9 @@ def bestilling():
 
         total_pris = pris * sete["multi"] * int(antall)
 
+        if kommentar == "":
+            kommentar = "ingenting"
+
         return render_template(
             "bekreftelse.html",
             navn=navn,
