@@ -9,8 +9,11 @@
             <p><strong>Film:</strong> {{ film }}</p>
             <p><strong>Aldersgruppe:</strong> {{ aldersgruppe }}</p>
             <p><strong>Dato:</strong> {{ dato }}</p>
+            <p><strong>Setetype:</strong> {{ seter }}</p>
             <p><strong>Visning:</strong> {{ visningstid }}</p>
             <p><strong>Antall billetter:</strong> {{ antall }}</p>
+            <p><strong>Kommentar:</strong> {{ kommentar }} <strong>er notert</strong></p>
+            <p><strong>Pris:</strong> {{ total_pris }} kr</p>
         </div>
         <a class="lillaknapp sendbestilling" href="{{ url_for('index') }}">Til forsiden</a>
     </div>

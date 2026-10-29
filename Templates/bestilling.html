@@ -37,6 +37,16 @@
         </div>
     </div>
 
+    <div class="feltboks">
+        <label for="film-velger">seter</label>
+        <select id="film-velger" name="seter" required>
+            <option value="" disabled selected>Velg setetype</option>
+            <option value="{{ setene[0].id }}">budsjett sete</option>
+            <option value="{{ setene[1].id }}">normal sete</option>
+            <option value="{{ setene[2].id }}">luksus sete</option>
+        </select>
+    </div>
+
     <div class="feltrad">
         <div class="feltboks">
             <label for="kino-dato">Dato</label>
@@ -57,6 +67,11 @@
                 <option value="19:00">19:00</option>
             </select>
         </div>
+    </div>
+
+    <div class="feltboks">
+        <label for="navn-felt">Kommentar</label>
+        <input type="text" id="Kommentar-felt" name="kommentar" autocomplete="" required>
     </div>
 
     <button type="submit" class="lillaknapp sendbestilling">Gå videre</button>
